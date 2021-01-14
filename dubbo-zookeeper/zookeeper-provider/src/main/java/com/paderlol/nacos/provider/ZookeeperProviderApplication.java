@@ -5,13 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author  paderlol
+ * @author paderlol
  */
 @SpringBootApplication
 @EnableDubbo
 public class ZookeeperProviderApplication {
-
-
 
     public static void main(String[] args) {
         SpringApplication.run(ZookeeperProviderApplication.class);

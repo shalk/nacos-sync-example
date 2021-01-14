@@ -23,6 +23,8 @@ public class NacosConsumerApplication implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) throws Exception {
-        log.info(zookeeperDemoService.sayHello("This is from Zookeeper to Nacos Sync !"));
+        for (int i = 0; i < 10; i++) {
+            log.info(zookeeperDemoService.sayHello("This is from Zookeeper to Nacos Sync !"));
+        }
     }
 }
