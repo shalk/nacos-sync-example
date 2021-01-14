@@ -1,7 +1,6 @@
 package com.paderlol.nacos.consumer;
 
 import com.paderlol.nacos.api.DemoService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
