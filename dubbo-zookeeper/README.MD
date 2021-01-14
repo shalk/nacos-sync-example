@@ -71,9 +71,24 @@ services:
 2. 启动Nacos server
 
 ```powershell
-$ docker run --name nacos-standalone -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:1.0.0-RC3
+$ docker-compose -f  standalone-derby.yaml up -d
 ```
-
+`standalone-derby.yaml` is as follow
+```yaml
+version: "2"
+services:
+  nacos:
+    image: nacos/nacos-server:latest
+    container_name: nacos-standalone
+    environment:
+    - PREFER_HOST_MODE=hostname
+    - MODE=standalone
+    volumes:
+    - ./standalone-logs/:/home/nacos/logs
+    - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
+    ports:
+    - "8848:8848"
+```
 
 
 3. 启动Mysql
@@ -106,7 +121,7 @@ $ docker run --name nacos-sync-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=
    执行启动脚本
 
    ```powershell
-   $ ./bin/startup.sh restart
+   $ ./bin/startup.sh start
    ```
 
    
